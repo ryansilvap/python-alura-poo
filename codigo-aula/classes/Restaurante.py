@@ -2,8 +2,8 @@ class Restaurante:
     restaurantes = []
 
     def __init__(self, nome, categoria):
-        self._nome = nome
-        self._categoria = categoria
+        self._nome = nome.title()
+        self._categoria = categoria.title()
         self._ativo = False
         Restaurante.restaurantes.append(self)
 
@@ -29,7 +29,3 @@ class Restaurante:
 
     def alterar_status(self):
         self._ativo = not self._ativo
-
-test = Restaurante('pizza', 'pizza')
-test.alterar_status()
-Restaurante.listar_restaurantes()
