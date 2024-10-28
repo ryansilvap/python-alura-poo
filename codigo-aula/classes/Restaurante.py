@@ -1,3 +1,5 @@
+from Avaliacao import Avaliacao
+
 class Restaurante:
     restaurantes = []
 
@@ -5,6 +7,7 @@ class Restaurante:
         self._nome = nome.title()
         self._categoria = categoria.title()
         self._ativo = False
+        self._avaliacao = []
         Restaurante.restaurantes.append(self)
 
     def __str__(self):
@@ -25,7 +28,21 @@ class Restaurante:
     @classmethod
     def listar_restaurantes(cls):
         for restaurante in cls.restaurantes:
-            print(f'Nome: {restaurante.nome} | Categoria: {restaurante.categoria} | Status: {restaurante.ativo}')
+            print(f'Nome: {restaurante.nome} | Categoria: {restaurante.categoria} | Avaliação: {restaurante.media_das_notas} | Status: {restaurante.ativo}')
 
     def alterar_status(self):
         self._ativo = not self._ativo
+
+    def receber_avaliacao(self, cliente, nota):
+        avaliacao = Avaliacao(cliente, nota)
+        self._avaliacao.append(avaliacao)
+
+    @property
+    def media_das_notas(self):
+        if not self._avaliacao:
+            return 0
+
+        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        quantidade_de_notas = len(self._avaliacao)
+        media = round(soma_das_notas / quantidade_de_notas, 1)
+        return str(media)
