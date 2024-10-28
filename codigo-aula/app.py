@@ -6,6 +6,8 @@ restaurante_japones = Restaurante('Sushi', 'japonesa')
 
 restaurante_pizza.alterar_status()
 
+restaurante_japones.receber_avaliacao('Ryan', 10)
+
 def main():
     Restaurante.listar_restaurantes()
 
