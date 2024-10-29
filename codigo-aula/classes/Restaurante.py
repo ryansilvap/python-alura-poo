@@ -1,4 +1,4 @@
-from Avaliacao import Avaliacao
+from classes.Avaliacao import Avaliacao
 
 class Restaurante:
     restaurantes = []
