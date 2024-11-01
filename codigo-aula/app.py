@@ -8,7 +8,7 @@ restaurante_pizza.alterar_status()
 
 restaurante_japones.receber_avaliacao('Ryan', 10)
 restaurante_japones.receber_avaliacao('John', 7.8)
-restaurante_japones.receber_avaliacao('Alice', 8)
+restaurante_japones.receber_avaliacao('Alice', 4.5)
 
 def main():
     Restaurante.listar_restaurantes()
