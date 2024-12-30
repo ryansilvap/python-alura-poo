@@ -15,10 +15,18 @@ restaurante_japones.receber_avaliacao('Alice', 4.5)
 bebida = Bebida('Suco', 7.5, '500ml')
 prato = Prato('Prato', 19.99, 'G')
 
+bebida.aplicar_desconto()
+prato.aplicar_desconto()
+
+restaurante_japones.adicionar_ao_cardapio(bebida)
+restaurante_japones.adicionar_ao_cardapio(prato)
+
 def main():
-    # Restaurante.listar_restaurantes()
-    print(bebida)
-    print(prato)
+    Restaurante.listar_restaurantes()
+    # print(bebida)
+    # print(prato)
+
+    restaurante_japones.exibir_cardapio
 
 if __name__ == '__main__':
     main()
